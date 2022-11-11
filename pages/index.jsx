@@ -1,30 +1,54 @@
 import React from "react";
 import config from "../config.json";
 import styled from "styled-components";
-import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 
 import BackgroundBanner from "../assets/img/imagem-banner.jpg";
 import { FavoriteCards } from "../src/components/FavoriteCards";
+import { videoService } from "../src/services/videoService";
 
 function HomePage() {
-  const estilosDaHomePage = {
-    // backgroundColor: "red"
-  };
+  const service = videoService();
   const [valorDoFiltro, setValorDoFiltro] = React.useState("");
+  const [playlists, setPlaylists] = React.useState({}); // config.playlists
+
+  React.useEffect(() => {
+    console.log("useEffect");
+    service.getAllVideos().then((dados) => {
+      console.log(dados.data);
+      // Forma imutavel
+      const novasPlaylists = {};
+      dados.data.forEach((video) => {
+        if (!novasPlaylists[video.playlist])
+          novasPlaylists[video.playlist] = [];
+        novasPlaylists[video.playlist] = [
+          video,
+          ...novasPlaylists[video.playlist],
+        ];
+      });
+
+      setPlaylists(novasPlaylists);
+    });
+  }, []);
 
   return (
     <>
-      <CSSReset />
-      <div style={estilosDaHomePage}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          flex: 1,
+          // backgroundColor: "red",
+        }}
+      >
         {/* Prop Drilling */}
         <Menu
           valorDoFiltro={valorDoFiltro}
           setValorDoFiltro={setValorDoFiltro}
         />
         <Header link={BackgroundBanner.src} />
-        <Timeline searchValue={valorDoFiltro} playlists={config.playlists}>
+        <Timeline searchValue={valorDoFiltro} playlists={playlists}>
           Conteúdo
         </Timeline>
         <Footer />
@@ -36,6 +60,8 @@ function HomePage() {
 export default HomePage;
 
 const StyledHeader = styled.div`
+  background-color: ${({ theme }) => theme.backgroundLevel1};
+
   .banner {
     width: 100%;
     height: 230px;
