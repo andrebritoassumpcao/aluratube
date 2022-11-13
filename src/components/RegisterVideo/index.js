@@ -62,7 +62,7 @@ export default function RegisterVideo() {
                 title: formCadastro.values.titulo,
                 url: formCadastro.values.url,
                 thumb: getThumbnail(formCadastro.values.url),
-                playlist: "jogos",
+                playlist: formCadastro.values.playlist,
               })
               .then((oqueveio) => {
                 console.log(oqueveio);
@@ -93,6 +93,12 @@ export default function RegisterVideo() {
               placeholder="URL"
               name="url"
               value={formCadastro.values.url}
+              onChange={formCadastro.handleChange}
+            />
+            <input
+              placeholder="Nome da playlist"
+              name="playlist"
+              value={formCadastro.values.playlist}
               onChange={formCadastro.handleChange}
             />
             <button type="submit">Cadastrar</button>

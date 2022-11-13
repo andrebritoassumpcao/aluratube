@@ -10,7 +10,7 @@ const StyledFavoriteCards = styled.div`
     flex-direction: column;
     text-align: center;
     text-decoration: none;
-    color: #141414;
+    color: ${({ theme }) => theme.textColorBase};
     gap: 8px;
     > span {
       font-size: 14px;

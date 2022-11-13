@@ -102,8 +102,7 @@ function Timeline({ searchValue, ...props }) {
     <StyledTimeline>
       {playlistsNames.map((playlistName) => {
         const videos = props.playlists[playlistName];
-        // console.log(playlistsName);
-        // console.log(videos);
+
         return (
           <section key={playlistName}>
             <h2>{playlistName}</h2>
