@@ -1,367 +1,102 @@
 "use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 (() => {
 var exports = {};
-exports.id = 888;
-exports.ids = [888];
+exports.id = "pages/_app";
+exports.ids = ["pages/_app"];
 exports.modules = {
 
-/***/ 301:
+/***/ "./pages/_app.js":
+/*!***********************!*\
+  !*** ./pages/_app.js ***!
+  \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ _App)
-});
-
-// EXTERNAL MODULE: external "react/jsx-runtime"
-var jsx_runtime_ = __webpack_require__(997);
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(689);
-var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
-;// CONCATENATED MODULE: ./src/components/CSSReset.js
-
-const CSSReset = external_styled_components_.createGlobalStyle`
-  /* Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: sans-serif;
-    background-color: ${({ theme  })=>theme.backgroundBase};
-    color: ${({ theme  })=>theme.textColorBase};
-  }
-  /* NextJS */
-  html {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-  }
-  body {
-    display: flex;
-    flex: 1;
-  }
-  #__next {
-    display: flex;
-    flex: 1;
-  }
-  /* Globals */
-  button,
-  a {
-    text-decoration: none;
-    opacity: 1;
-    transition: .3s;
-    &:hover,
-    &:focus {
-      opacity: .5;
-    }
-  }
-`;
-
-// EXTERNAL MODULE: ./src/components/Menu/components/ColorMode.js
-var ColorMode = __webpack_require__(573);
-;// CONCATENATED MODULE: ./src/components/RegisterVideo/styles.js
-
-const StyledRegisterVideo = external_styled_components_default().div.withConfig({
-    componentId: "sc-867cd9f3-0"
-})`
-  .add-video {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    color: inherit;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    border: 0;
-    background-color: red;
-    border-radius: 50%;
-    z-index: 99;
-    cursor: pointer;
-  }
-  .close-modal {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 8px;
-    right: 16px;
-    color: inherit;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  button[type="submit"] {
-    background-color: red;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    color: inherit;
-  }
-  form {
-    width: 100%;
-    padding: 5%;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    & > div {
-      flex: 1;
-      border-radius: 8px;
-      max-width: 320px;
-      background-color: ${({ theme  })=>theme.backgroundLevel2};
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      padding: 16px;
-      padding-top: 40px;
-    }
-  }
-  input {
-    border-radius: 2px;
-    border: 1px solid ${({ theme  })=>theme.borderBase};
-    padding: 8px 10px;
-    margin-bottom: 10px;
-    outline: none;
-    color: #222222;
-    background-color: #f9f9f9;
-    color: ${({ theme  })=>theme.textColorBase};
-    background-color: ${({ theme  })=>theme.backgroundBase};
-  }
-`;
-
-// EXTERNAL MODULE: external "@supabase/supabase-js"
-var supabase_js_ = __webpack_require__(885);
-;// CONCATENATED MODULE: ./src/components/RegisterVideo/index.js
-
-
-
-
-// Whiteboarding
-// Custom Hook
-function useForm(propsDoForm) {
-    const [values, setValues] = external_react_default().useState(propsDoForm.initialValues);
-    return {
-        values,
-        handleChange: (evento)=>{
-            console.log(evento.target);
-            const value = evento.target.value;
-            const name = evento.target.name;
-            setValues({
-                ...values,
-                [name]: value
-            });
-        },
-        clearForm () {
-            setValues({});
-        }
-    };
-}
-const PROJECT_URL = "https://nyypopdngefbljsmqlow.supabase.co";
-const PUBLIC_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55eXBvcGRuZ2VmYmxqc21xbG93Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgyMDU3NjQsImV4cCI6MTk4Mzc4MTc2NH0.GmmKZ_-gzxduHAYB699vFkpG7Lc_nv78pJCBu1UfzNo";
-const supabase = (0,supabase_js_.createClient)(PROJECT_URL, PUBLIC_KEY);
-function getThumbnail(url) {
-    return `https://img.youtube.com/vi/${url.split("v=")[1]}/hqdefault.jpg`;
-}
-function RegisterVideo() {
-    const formCadastro = useForm({
-        initialValues: {
-            titulo: "Frost punk",
-            url: "https://www.youtube.com/watch?v=QsqatJxAUtk"
-        }
-    });
-    const [formVisivel, setFormVisivel] = external_react_default().useState(false);
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(StyledRegisterVideo, {
-        children: [
-            /*#__PURE__*/ jsx_runtime_.jsx("button", {
-                className: "add-video",
-                onClick: ()=>setFormVisivel(true),
-                children: "+"
-            }),
-            formVisivel ? /*#__PURE__*/ jsx_runtime_.jsx("form", {
-                onSubmit: (evento)=>{
-                    evento.preventDefault();
-                    console.log(formCadastro.values);
-                    // Contrato entre o nosso Front e o BackEnd
-                    supabase.from("video").insert({
-                        title: formCadastro.values.titulo,
-                        url: formCadastro.values.url,
-                        thumb: getThumbnail(formCadastro.values.url),
-                        playlist: formCadastro.values.playlist
-                    }).then((oqueveio)=>{
-                        console.log(oqueveio);
-                    }).catch((err)=>{
-                        console.log(err);
-                    });
-                    setFormVisivel(false);
-                    formCadastro.clearForm();
-                },
-                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                    children: [
-                        /*#__PURE__*/ jsx_runtime_.jsx("button", {
-                            type: "button",
-                            className: "close-modal",
-                            onClick: ()=>setFormVisivel(false),
-                            children: "X"
-                        }),
-                        /*#__PURE__*/ jsx_runtime_.jsx("input", {
-                            placeholder: "Titulo do v\xeddeo",
-                            name: "titulo",
-                            value: formCadastro.values.titulo,
-                            onChange: formCadastro.handleChange
-                        }),
-                        /*#__PURE__*/ jsx_runtime_.jsx("input", {
-                            placeholder: "URL",
-                            name: "url",
-                            value: formCadastro.values.url,
-                            onChange: formCadastro.handleChange
-                        }),
-                        /*#__PURE__*/ jsx_runtime_.jsx("input", {
-                            placeholder: "Nome da playlist",
-                            name: "playlist",
-                            value: formCadastro.values.playlist,
-                            onChange: formCadastro.handleChange
-                        }),
-                        /*#__PURE__*/ jsx_runtime_.jsx("button", {
-                            type: "submit",
-                            children: "Cadastrar"
-                        })
-                    ]
-                })
-            }) : false
-        ]
-    });
-}
-
-;// CONCATENATED MODULE: ./pages/_app.js
-
-
-
-
-
-
-const theme = {
-    light: {
-        backgroundBase: "#f9f9f9",
-        backgroundLevel1: "#ffffff",
-        backgroundLevel2: "#f0f0f0",
-        borderBase: "#e5e5e5",
-        textColorBase: "#222222"
-    },
-    dark: {
-        backgroundBase: "#181818",
-        backgroundLevel1: "#202020",
-        backgroundLevel2: "#313131",
-        borderBase: "#383838",
-        textColorBase: "#FFFFFF"
-    }
-};
-function ProviderWrapper(props) {
-    return /*#__PURE__*/ jsx_runtime_.jsx(ColorMode/* default */.Z, {
-        initialMode: "dark",
-        children: props.children
-    });
-}
-function MyApp({ Component , pageProps  }) {
-    const contexto = external_react_default().useContext(ColorMode/* ColorModeContext */.k);
-    //console.log(contexto.mode);
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(external_styled_components_.ThemeProvider, {
-        theme: theme[contexto.mode],
-        children: [
-            /*#__PURE__*/ jsx_runtime_.jsx(CSSReset, {}),
-            /*#__PURE__*/ jsx_runtime_.jsx(Component, {
-                ...pageProps
-            }),
-            /*#__PURE__*/ jsx_runtime_.jsx(RegisterVideo, {})
-        ]
-    });
-}
-function _App(props) {
-    return /*#__PURE__*/ jsx_runtime_.jsx(ProviderWrapper, {
-        children: /*#__PURE__*/ jsx_runtime_.jsx(MyApp, {
-            ...props
-        })
-    });
-}
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _App)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ \"styled-components\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _src_components_CSSReset__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../src/components/CSSReset */ \"./src/components/CSSReset.js\");\n/* harmony import */ var _src_components_Menu_components_ColorMode__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/components/Menu/components/ColorMode */ \"./src/components/Menu/components/ColorMode.js\");\n/* harmony import */ var _src_components_RegisterVideo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../src/components/RegisterVideo */ \"./src/components/RegisterVideo/index.js\");\n\n\n\n\n\n\nconst theme = {\n    light: {\n        backgroundBase: \"#f9f9f9\",\n        backgroundLevel1: \"#ffffff\",\n        backgroundLevel2: \"#f0f0f0\",\n        borderBase: \"#e5e5e5\",\n        textColorBase: \"#222222\"\n    },\n    dark: {\n        backgroundBase: \"#181818\",\n        backgroundLevel1: \"#202020\",\n        backgroundLevel2: \"#313131\",\n        borderBase: \"#383838\",\n        textColorBase: \"#FFFFFF\"\n    }\n};\nfunction ProviderWrapper(props) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_src_components_Menu_components_ColorMode__WEBPACK_IMPORTED_MODULE_4__[\"default\"], {\n        initialMode: \"dark\",\n        children: props.children\n    }, void 0, false, {\n        fileName: \"C:\\\\projetos\\\\aluratube\\\\pages\\\\_app.js\",\n        lineNumber: 28,\n        columnNumber: 5\n    }, this);\n}\nfunction MyApp({ Component , pageProps  }) {\n    const contexto = react__WEBPACK_IMPORTED_MODULE_1___default().useContext(_src_components_Menu_components_ColorMode__WEBPACK_IMPORTED_MODULE_4__.ColorModeContext);\n    //console.log(contexto.mode);\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(styled_components__WEBPACK_IMPORTED_MODULE_2__.ThemeProvider, {\n        theme: theme[contexto.mode],\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_src_components_CSSReset__WEBPACK_IMPORTED_MODULE_3__.CSSReset, {}, void 0, false, {\n                fileName: \"C:\\\\projetos\\\\aluratube\\\\pages\\\\_app.js\",\n                lineNumber: 37,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(Component, {\n                ...pageProps\n            }, void 0, false, {\n                fileName: \"C:\\\\projetos\\\\aluratube\\\\pages\\\\_app.js\",\n                lineNumber: 38,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_src_components_RegisterVideo__WEBPACK_IMPORTED_MODULE_5__[\"default\"], {}, void 0, false, {\n                fileName: \"C:\\\\projetos\\\\aluratube\\\\pages\\\\_app.js\",\n                lineNumber: 39,\n                columnNumber: 7\n            }, this)\n        ]\n    }, void 0, true, {\n        fileName: \"C:\\\\projetos\\\\aluratube\\\\pages\\\\_app.js\",\n        lineNumber: 36,\n        columnNumber: 5\n    }, this);\n}\nfunction _App(props) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(ProviderWrapper, {\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(MyApp, {\n            ...props\n        }, void 0, false, {\n            fileName: \"C:\\\\projetos\\\\aluratube\\\\pages\\\\_app.js\",\n            lineNumber: 47,\n            columnNumber: 7\n        }, this)\n    }, void 0, false, {\n        fileName: \"C:\\\\projetos\\\\aluratube\\\\pages\\\\_app.js\",\n        lineNumber: 46,\n        columnNumber: 5\n    }, this);\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9fYXBwLmpzLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUEwQjtBQUN3QjtBQUNJO0FBR0Q7QUFDTztBQUU1RCxNQUFNTSxRQUFRO0lBQ1pDLE9BQU87UUFDTEMsZ0JBQWdCO1FBQ2hCQyxrQkFBa0I7UUFDbEJDLGtCQUFrQjtRQUNsQkMsWUFBWTtRQUNaQyxlQUFlO0lBQ2pCO0lBQ0FDLE1BQU07UUFDSkwsZ0JBQWdCO1FBQ2hCQyxrQkFBa0I7UUFDbEJDLGtCQUFrQjtRQUNsQkMsWUFBWTtRQUNaQyxlQUFlO0lBQ2pCO0FBQ0Y7QUFFQSxTQUFTRSxnQkFBZ0JDLEtBQUssRUFBRTtJQUM5QixxQkFDRSw4REFBQ1osaUZBQWlCQTtRQUFDYSxhQUFhO2tCQUFTRCxNQUFNRSxRQUFROzs7Ozs7QUFFM0Q7QUFFQSxTQUFTQyxNQUFNLEVBQUVDLFVBQVMsRUFBRUMsVUFBUyxFQUFFLEVBQUU7SUFDdkMsTUFBTUMsV0FBV3JCLHVEQUFnQixDQUFDSSx1RkFBZ0JBO0lBQ2xELDZCQUE2QjtJQUM3QixxQkFDRSw4REFBQ0gsNERBQWFBO1FBQUNLLE9BQU9BLEtBQUssQ0FBQ2UsU0FBU0UsSUFBSSxDQUFDOzswQkFDeEMsOERBQUNyQiw4REFBUUE7Ozs7OzBCQUNULDhEQUFDaUI7Z0JBQVcsR0FBR0MsU0FBUzs7Ozs7OzBCQUN4Qiw4REFBQ2YscUVBQWFBOzs7Ozs7Ozs7OztBQUdwQjtBQUVlLFNBQVNtQixLQUFLVCxLQUFLLEVBQUU7SUFDbEMscUJBQ0UsOERBQUNEO2tCQUNDLDRFQUFDSTtZQUFPLEdBQUdILEtBQUs7Ozs7Ozs7Ozs7O0FBR3RCLENBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9wYWdlcy9fYXBwLmpzP2UwYWQiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gXCJyZWFjdFwiO1xyXG5pbXBvcnQgeyBUaGVtZVByb3ZpZGVyIH0gZnJvbSBcInN0eWxlZC1jb21wb25lbnRzXCI7XHJcbmltcG9ydCB7IENTU1Jlc2V0IH0gZnJvbSBcIi4uL3NyYy9jb21wb25lbnRzL0NTU1Jlc2V0XCI7XHJcbmltcG9ydCBDb2xvck1vZGVQcm92aWRlciwge1xyXG4gIENvbG9yTW9kZUNvbnRleHQsXHJcbn0gZnJvbSBcIi4uL3NyYy9jb21wb25lbnRzL01lbnUvY29tcG9uZW50cy9Db2xvck1vZGVcIjtcclxuaW1wb3J0IFJlZ2lzdGVyVmlkZW8gZnJvbSBcIi4uL3NyYy9jb21wb25lbnRzL1JlZ2lzdGVyVmlkZW9cIjtcclxuXHJcbmNvbnN0IHRoZW1lID0ge1xyXG4gIGxpZ2h0OiB7XHJcbiAgICBiYWNrZ3JvdW5kQmFzZTogXCIjZjlmOWY5XCIsXHJcbiAgICBiYWNrZ3JvdW5kTGV2ZWwxOiBcIiNmZmZmZmZcIixcclxuICAgIGJhY2tncm91bmRMZXZlbDI6IFwiI2YwZjBmMFwiLFxyXG4gICAgYm9yZGVyQmFzZTogXCIjZTVlNWU1XCIsXHJcbiAgICB0ZXh0Q29sb3JCYXNlOiBcIiMyMjIyMjJcIixcclxuICB9LFxyXG4gIGRhcms6IHtcclxuICAgIGJhY2tncm91bmRCYXNlOiBcIiMxODE4MThcIixcclxuICAgIGJhY2tncm91bmRMZXZlbDE6IFwiIzIwMjAyMFwiLFxyXG4gICAgYmFja2dyb3VuZExldmVsMjogXCIjMzEzMTMxXCIsXHJcbiAgICBib3JkZXJCYXNlOiBcIiMzODM4MzhcIixcclxuICAgIHRleHRDb2xvckJhc2U6IFwiI0ZGRkZGRlwiLFxyXG4gIH0sXHJcbn07XHJcblxyXG5mdW5jdGlvbiBQcm92aWRlcldyYXBwZXIocHJvcHMpIHtcclxuICByZXR1cm4gKFxyXG4gICAgPENvbG9yTW9kZVByb3ZpZGVyIGluaXRpYWxNb2RlPXtcImRhcmtcIn0+e3Byb3BzLmNoaWxkcmVufTwvQ29sb3JNb2RlUHJvdmlkZXI+XHJcbiAgKTtcclxufVxyXG5cclxuZnVuY3Rpb24gTXlBcHAoeyBDb21wb25lbnQsIHBhZ2VQcm9wcyB9KSB7XHJcbiAgY29uc3QgY29udGV4dG8gPSBSZWFjdC51c2VDb250ZXh0KENvbG9yTW9kZUNvbnRleHQpO1xyXG4gIC8vY29uc29sZS5sb2coY29udGV4dG8ubW9kZSk7XHJcbiAgcmV0dXJuIChcclxuICAgIDxUaGVtZVByb3ZpZGVyIHRoZW1lPXt0aGVtZVtjb250ZXh0by5tb2RlXX0+XHJcbiAgICAgIDxDU1NSZXNldCAvPlxyXG4gICAgICA8Q29tcG9uZW50IHsuLi5wYWdlUHJvcHN9IC8+XHJcbiAgICAgIDxSZWdpc3RlclZpZGVvIC8+XHJcbiAgICA8L1RoZW1lUHJvdmlkZXI+XHJcbiAgKTtcclxufVxyXG5cclxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gX0FwcChwcm9wcykge1xyXG4gIHJldHVybiAoXHJcbiAgICA8UHJvdmlkZXJXcmFwcGVyPlxyXG4gICAgICA8TXlBcHAgey4uLnByb3BzfSAvPlxyXG4gICAgPC9Qcm92aWRlcldyYXBwZXI+XHJcbiAgKTtcclxufVxyXG4iXSwibmFtZXMiOlsiUmVhY3QiLCJUaGVtZVByb3ZpZGVyIiwiQ1NTUmVzZXQiLCJDb2xvck1vZGVQcm92aWRlciIsIkNvbG9yTW9kZUNvbnRleHQiLCJSZWdpc3RlclZpZGVvIiwidGhlbWUiLCJsaWdodCIsImJhY2tncm91bmRCYXNlIiwiYmFja2dyb3VuZExldmVsMSIsImJhY2tncm91bmRMZXZlbDIiLCJib3JkZXJCYXNlIiwidGV4dENvbG9yQmFzZSIsImRhcmsiLCJQcm92aWRlcldyYXBwZXIiLCJwcm9wcyIsImluaXRpYWxNb2RlIiwiY2hpbGRyZW4iLCJNeUFwcCIsIkNvbXBvbmVudCIsInBhZ2VQcm9wcyIsImNvbnRleHRvIiwidXNlQ29udGV4dCIsIm1vZGUiLCJfQXBwIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./pages/_app.js\n");
 
 /***/ }),
 
-/***/ 573:
+/***/ "./src/components/CSSReset.js":
+/*!************************************!*\
+  !*** ./src/components/CSSReset.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (/* binding */ ColorModeProvider),
-/* harmony export */   "k": () => (/* binding */ ColorModeContext)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const ColorModeContext = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_1___default().createContext({
-    mode: "",
-    setMode: ()=>{
-        alert("Voc\xea precisa me configurar primeiro!");
-    },
-    toggleMode: ()=>{
-        alert("Voc\xea precisa me configurar primeiro!");
-    }
-});
-function ColorModeProvider(props) {
-    const [mode, setMode] = react__WEBPACK_IMPORTED_MODULE_1___default().useState(props.initialMode);
-    function toggleMode() {
-        if (mode === "dark") setMode("light");
-        if (mode === "light") setMode("dark");
-    }
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(ColorModeContext.Provider, {
-        value: {
-            mode: mode,
-            setMode: setMode,
-            toggleMode: toggleMode
-        },
-        children: props.children
-    });
-}
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"CSSReset\": () => (/* binding */ CSSReset)\n/* harmony export */ });\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ \"styled-components\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);\n\nconst CSSReset = styled_components__WEBPACK_IMPORTED_MODULE_0__.createGlobalStyle`\r\n  /* Reset */\r\n  * {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n  }\r\n  body {\r\n    font-family: sans-serif;\r\n    background-color: ${({ theme  })=>theme.backgroundBase};\r\n    color: ${({ theme  })=>theme.textColorBase};\r\n  }\r\n  /* NextJS */\r\n  html {\r\n    display: flex;\r\n    flex-direction: column;\r\n    min-height: 100%;\r\n  }\r\n  body {\r\n    display: flex;\r\n    flex: 1;\r\n  }\r\n  #__next {\r\n    display: flex;\r\n    flex: 1;\r\n  }\r\n  /* Globals */\r\n  button,\r\n  a {\r\n    text-decoration: none;\r\n    opacity: 1;\r\n    transition: .3s;\r\n    &:hover,\r\n    &:focus {\r\n      opacity: .5;\r\n    }\r\n  }\r\n`;\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29tcG9uZW50cy9DU1NSZXNldC5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBc0Q7QUFFL0MsTUFBTUMsV0FBV0QsZ0VBQWlCLENBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvY29tcG9uZW50cy9DU1NSZXNldC5qcz8wMmFhIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNyZWF0ZUdsb2JhbFN0eWxlIH0gZnJvbSBcInN0eWxlZC1jb21wb25lbnRzXCI7XHJcblxyXG5leHBvcnQgY29uc3QgQ1NTUmVzZXQgPSBjcmVhdGVHbG9iYWxTdHlsZWBcclxuICAvKiBSZXNldCAqL1xyXG4gICoge1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgcGFkZGluZzogMDtcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgfVxyXG4gIGJvZHkge1xyXG4gICAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkeyh7IHRoZW1lIH0pID0+IHRoZW1lLmJhY2tncm91bmRCYXNlfTtcclxuICAgIGNvbG9yOiAkeyh7IHRoZW1lIH0pID0+IHRoZW1lLnRleHRDb2xvckJhc2V9O1xyXG4gIH1cclxuICAvKiBOZXh0SlMgKi9cclxuICBodG1sIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgbWluLWhlaWdodDogMTAwJTtcclxuICB9XHJcbiAgYm9keSB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleDogMTtcclxuICB9XHJcbiAgI19fbmV4dCB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleDogMTtcclxuICB9XHJcbiAgLyogR2xvYmFscyAqL1xyXG4gIGJ1dHRvbixcclxuICBhIHtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgICB0cmFuc2l0aW9uOiAuM3M7XHJcbiAgICAmOmhvdmVyLFxyXG4gICAgJjpmb2N1cyB7XHJcbiAgICAgIG9wYWNpdHk6IC41O1xyXG4gICAgfVxyXG4gIH1cclxuYDtcclxuIl0sIm5hbWVzIjpbImNyZWF0ZUdsb2JhbFN0eWxlIiwiQ1NTUmVzZXQiLCJ0aGVtZSIsImJhY2tncm91bmRCYXNlIiwidGV4dENvbG9yQmFzZSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/components/CSSReset.js\n");
 
 /***/ }),
 
-/***/ 885:
+/***/ "./src/components/Menu/components/ColorMode.js":
+/*!*****************************************************!*\
+  !*** ./src/components/Menu/components/ColorMode.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"ColorModeContext\": () => (/* binding */ ColorModeContext),\n/* harmony export */   \"default\": () => (/* binding */ ColorModeProvider)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n\n\nconst ColorModeContext = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_1___default().createContext({\n    mode: \"\",\n    setMode: ()=>{\n        alert(\"Voc\\xea precisa me configurar primeiro!\");\n    },\n    toggleMode: ()=>{\n        alert(\"Voc\\xea precisa me configurar primeiro!\");\n    }\n});\nfunction ColorModeProvider(props) {\n    const [mode, setMode] = react__WEBPACK_IMPORTED_MODULE_1___default().useState(props.initialMode);\n    function toggleMode() {\n        if (mode === \"dark\") setMode(\"light\");\n        if (mode === \"light\") setMode(\"dark\");\n    }\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(ColorModeContext.Provider, {\n        value: {\n            mode: mode,\n            setMode: setMode,\n            toggleMode: toggleMode\n        },\n        children: props.children\n    }, void 0, false, {\n        fileName: \"C:\\\\projetos\\\\aluratube\\\\src\\\\components\\\\Menu\\\\components\\\\ColorMode.js\",\n        lineNumber: 22,\n        columnNumber: 5\n    }, this);\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29tcG9uZW50cy9NZW51L2NvbXBvbmVudHMvQ29sb3JNb2RlLmpzLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUFBO0FBQTBCO0FBRW5CLE1BQU1DLGlDQUFtQkQsMERBQW1CLENBQUM7SUFDbERHLE1BQU07SUFDTkMsU0FBUyxJQUFNO1FBQ2JDLE1BQU07SUFDUjtJQUNBQyxZQUFZLElBQU07UUFDaEJELE1BQU07SUFDUjtBQUNGLEdBQUc7QUFFWSxTQUFTRSxrQkFBa0JDLEtBQUssRUFBRTtJQUMvQyxNQUFNLENBQUNMLE1BQU1DLFFBQVEsR0FBR0oscURBQWMsQ0FBQ1EsTUFBTUUsV0FBVztJQUV4RCxTQUFTSixhQUFhO1FBQ3BCLElBQUlILFNBQVMsUUFBUUMsUUFBUTtRQUM3QixJQUFJRCxTQUFTLFNBQVNDLFFBQVE7SUFDaEM7SUFFQSxxQkFDRSw4REFBQ0gsaUJBQWlCVSxRQUFRO1FBQ3hCQyxPQUFPO1lBQUVULE1BQU1BO1lBQU1DLFNBQVNBO1lBQVNFLFlBQVlBO1FBQVc7a0JBRTdERSxNQUFNSyxRQUFROzs7Ozs7QUFHckIsQ0FBQyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9jb21wb25lbnRzL01lbnUvY29tcG9uZW50cy9Db2xvck1vZGUuanM/ZDliOSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSBcInJlYWN0XCI7XHJcblxyXG5leHBvcnQgY29uc3QgQ29sb3JNb2RlQ29udGV4dCA9IFJlYWN0LmNyZWF0ZUNvbnRleHQoe1xyXG4gIG1vZGU6IFwiXCIsXHJcbiAgc2V0TW9kZTogKCkgPT4ge1xyXG4gICAgYWxlcnQoXCJWb2PDqiBwcmVjaXNhIG1lIGNvbmZpZ3VyYXIgcHJpbWVpcm8hXCIpO1xyXG4gIH0sXHJcbiAgdG9nZ2xlTW9kZTogKCkgPT4ge1xyXG4gICAgYWxlcnQoXCJWb2PDqiBwcmVjaXNhIG1lIGNvbmZpZ3VyYXIgcHJpbWVpcm8hXCIpO1xyXG4gIH0sXHJcbn0pO1xyXG5cclxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQ29sb3JNb2RlUHJvdmlkZXIocHJvcHMpIHtcclxuICBjb25zdCBbbW9kZSwgc2V0TW9kZV0gPSBSZWFjdC51c2VTdGF0ZShwcm9wcy5pbml0aWFsTW9kZSk7XHJcblxyXG4gIGZ1bmN0aW9uIHRvZ2dsZU1vZGUoKSB7XHJcbiAgICBpZiAobW9kZSA9PT0gXCJkYXJrXCIpIHNldE1vZGUoXCJsaWdodFwiKTtcclxuICAgIGlmIChtb2RlID09PSBcImxpZ2h0XCIpIHNldE1vZGUoXCJkYXJrXCIpO1xyXG4gIH1cclxuXHJcbiAgcmV0dXJuIChcclxuICAgIDxDb2xvck1vZGVDb250ZXh0LlByb3ZpZGVyXHJcbiAgICAgIHZhbHVlPXt7IG1vZGU6IG1vZGUsIHNldE1vZGU6IHNldE1vZGUsIHRvZ2dsZU1vZGU6IHRvZ2dsZU1vZGUgfX1cclxuICAgID5cclxuICAgICAge3Byb3BzLmNoaWxkcmVufVxyXG4gICAgPC9Db2xvck1vZGVDb250ZXh0LlByb3ZpZGVyPlxyXG4gICk7XHJcbn1cclxuIl0sIm5hbWVzIjpbIlJlYWN0IiwiQ29sb3JNb2RlQ29udGV4dCIsImNyZWF0ZUNvbnRleHQiLCJtb2RlIiwic2V0TW9kZSIsImFsZXJ0IiwidG9nZ2xlTW9kZSIsIkNvbG9yTW9kZVByb3ZpZGVyIiwicHJvcHMiLCJ1c2VTdGF0ZSIsImluaXRpYWxNb2RlIiwiUHJvdmlkZXIiLCJ2YWx1ZSIsImNoaWxkcmVuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/components/Menu/components/ColorMode.js\n");
+
+/***/ }),
+
+/***/ "./src/components/RegisterVideo/index.js":
+/*!***********************************************!*\
+  !*** ./src/components/RegisterVideo/index.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ RegisterVideo)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles */ \"./src/components/RegisterVideo/styles.js\");\n/* harmony import */ var _supabase_supabase_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @supabase/supabase-js */ \"@supabase/supabase-js\");\n/* harmony import */ var _supabase_supabase_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_supabase_supabase_js__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n// Whiteboarding\n// Custom Hook\nfunction useForm(propsDoForm) {\n    const [values, setValues] = react__WEBPACK_IMPORTED_MODULE_1___default().useState(propsDoForm.initialValues);\n    return {\n        values,\n        handleChange: (evento)=>{\n            console.log(evento.target);\n            const value = evento.target.value;\n            const name = evento.target.name;\n            setValues({\n                ...values,\n                [name]: value\n            });\n        },\n        clearForm () {\n            setValues({});\n        }\n    };\n}\nconst PROJECT_URL = \"https://nyypopdngefbljsmqlow.supabase.co\";\nconst PUBLIC_KEY = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55eXBvcGRuZ2VmYmxqc21xbG93Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgyMDU3NjQsImV4cCI6MTk4Mzc4MTc2NH0.GmmKZ_-gzxduHAYB699vFkpG7Lc_nv78pJCBu1UfzNo\";\nconst supabase = (0,_supabase_supabase_js__WEBPACK_IMPORTED_MODULE_3__.createClient)(PROJECT_URL, PUBLIC_KEY);\nfunction getThumbnail(url) {\n    return `https://img.youtube.com/vi/${url.split(\"v=\")[1]}/hqdefault.jpg`;\n}\nfunction RegisterVideo() {\n    const formCadastro = useForm({\n        initialValues: {\n            titulo: \"\",\n            url: \"\"\n        }\n    });\n    const [formVisivel, setFormVisivel] = react__WEBPACK_IMPORTED_MODULE_1___default().useState(false);\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_styles__WEBPACK_IMPORTED_MODULE_2__.StyledRegisterVideo, {\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"button\", {\n                className: \"add-video\",\n                onClick: ()=>setFormVisivel(true),\n                children: \"+\"\n            }, void 0, false, {\n                fileName: \"C:\\\\projetos\\\\aluratube\\\\src\\\\components\\\\RegisterVideo\\\\index.js\",\n                lineNumber: 47,\n                columnNumber: 7\n            }, this),\n            formVisivel ? /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"form\", {\n                onSubmit: (evento)=>{\n                    evento.preventDefault();\n                    console.log(formCadastro.values);\n                    // Contrato entre o nosso Front e o BackEnd\n                    supabase.from(\"video\").insert({\n                        title: formCadastro.values.titulo,\n                        url: formCadastro.values.url,\n                        thumb: getThumbnail(formCadastro.values.url),\n                        playlist: formCadastro.values.playlist\n                    }).then((oqueveio)=>{\n                        console.log(oqueveio);\n                    }).catch((err)=>{\n                        console.log(err);\n                    });\n                    setFormVisivel(false);\n                    formCadastro.clearForm();\n                },\n                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                    children: [\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"button\", {\n                            type: \"button\",\n                            className: \"close-modal\",\n                            onClick: ()=>setFormVisivel(false),\n                            children: \"X\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\projetos\\\\aluratube\\\\src\\\\components\\\\RegisterVideo\\\\index.js\",\n                            lineNumber: 79,\n                            columnNumber: 13\n                        }, this),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"input\", {\n                            placeholder: \"Titulo do v\\xeddeo\",\n                            name: \"titulo\",\n                            value: formCadastro.values.titulo,\n                            onChange: formCadastro.handleChange\n                        }, void 0, false, {\n                            fileName: \"C:\\\\projetos\\\\aluratube\\\\src\\\\components\\\\RegisterVideo\\\\index.js\",\n                            lineNumber: 86,\n                            columnNumber: 13\n                        }, this),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"input\", {\n                            placeholder: \"URL\",\n                            name: \"url\",\n                            value: formCadastro.values.url,\n                            onChange: formCadastro.handleChange\n                        }, void 0, false, {\n                            fileName: \"C:\\\\projetos\\\\aluratube\\\\src\\\\components\\\\RegisterVideo\\\\index.js\",\n                            lineNumber: 92,\n                            columnNumber: 13\n                        }, this),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"input\", {\n                            placeholder: \"Nome da playlist\",\n                            name: \"playlist\",\n                            value: formCadastro.values.playlist,\n                            onChange: formCadastro.handleChange\n                        }, void 0, false, {\n                            fileName: \"C:\\\\projetos\\\\aluratube\\\\src\\\\components\\\\RegisterVideo\\\\index.js\",\n                            lineNumber: 98,\n                            columnNumber: 13\n                        }, this),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"button\", {\n                            type: \"submit\",\n                            children: \"Cadastrar\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\projetos\\\\aluratube\\\\src\\\\components\\\\RegisterVideo\\\\index.js\",\n                            lineNumber: 104,\n                            columnNumber: 13\n                        }, this)\n                    ]\n                }, void 0, true, {\n                    fileName: \"C:\\\\projetos\\\\aluratube\\\\src\\\\components\\\\RegisterVideo\\\\index.js\",\n                    lineNumber: 78,\n                    columnNumber: 11\n                }, this)\n            }, void 0, false, {\n                fileName: \"C:\\\\projetos\\\\aluratube\\\\src\\\\components\\\\RegisterVideo\\\\index.js\",\n                lineNumber: 53,\n                columnNumber: 9\n            }, this) : false\n        ]\n    }, void 0, true, {\n        fileName: \"C:\\\\projetos\\\\aluratube\\\\src\\\\components\\\\RegisterVideo\\\\index.js\",\n        lineNumber: 46,\n        columnNumber: 5\n    }, this);\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29tcG9uZW50cy9SZWdpc3RlclZpZGVvL2luZGV4LmpzLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O0FBQUE7QUFBMEI7QUFDcUI7QUFDTTtBQUVyRCxnQkFBZ0I7QUFDaEIsY0FBYztBQUNkLFNBQVNHLFFBQVFDLFdBQVcsRUFBRTtJQUM1QixNQUFNLENBQUNDLFFBQVFDLFVBQVUsR0FBR04scURBQWMsQ0FBQ0ksWUFBWUksYUFBYTtJQUVwRSxPQUFPO1FBQ0xIO1FBQ0FJLGNBQWMsQ0FBQ0MsU0FBVztZQUN4QkMsUUFBUUMsR0FBRyxDQUFDRixPQUFPRyxNQUFNO1lBQ3pCLE1BQU1DLFFBQVFKLE9BQU9HLE1BQU0sQ0FBQ0MsS0FBSztZQUNqQyxNQUFNQyxPQUFPTCxPQUFPRyxNQUFNLENBQUNFLElBQUk7WUFDL0JULFVBQVU7Z0JBQ1IsR0FBR0QsTUFBTTtnQkFDVCxDQUFDVSxLQUFLLEVBQUVEO1lBQ1Y7UUFDRjtRQUNBRSxhQUFZO1lBQ1ZWLFVBQVUsQ0FBQztRQUNiO0lBQ0Y7QUFDRjtBQUVBLE1BQU1XLGNBQWM7QUFDcEIsTUFBTUMsYUFDSjtBQUNGLE1BQU1DLFdBQVdqQixtRUFBWUEsQ0FBQ2UsYUFBYUM7QUFFM0MsU0FBU0UsYUFBYUMsR0FBRyxFQUFFO0lBQ3pCLE9BQU8sQ0FBQywyQkFBMkIsRUFBRUEsSUFBSUMsS0FBSyxDQUFDLEtBQUssQ0FBQyxFQUFFLENBQUMsY0FBYyxDQUFDO0FBQ3pFO0FBRWUsU0FBU0MsZ0JBQWdCO0lBQ3RDLE1BQU1DLGVBQWVyQixRQUFRO1FBQzNCSyxlQUFlO1lBQ2JpQixRQUFRO1lBQ1JKLEtBQUs7UUFDUDtJQUNGO0lBQ0EsTUFBTSxDQUFDSyxhQUFhQyxlQUFlLEdBQUczQixxREFBYyxDQUFDLEtBQUs7SUFFMUQscUJBQ0UsOERBQUNDLHdEQUFtQkE7OzBCQUNsQiw4REFBQzJCO2dCQUFPQyxXQUFVO2dCQUFZQyxTQUFTLElBQU1ILGVBQWUsSUFBSTswQkFBRzs7Ozs7O1lBS2xFRCw0QkFDQyw4REFBQ0s7Z0JBQ0NDLFVBQVUsQ0FBQ3RCLFNBQVc7b0JBQ3BCQSxPQUFPdUIsY0FBYztvQkFDckJ0QixRQUFRQyxHQUFHLENBQUNZLGFBQWFuQixNQUFNO29CQUUvQiwyQ0FBMkM7b0JBQzNDYyxTQUNHZSxJQUFJLENBQUMsU0FDTEMsTUFBTSxDQUFDO3dCQUNOQyxPQUFPWixhQUFhbkIsTUFBTSxDQUFDb0IsTUFBTTt3QkFDakNKLEtBQUtHLGFBQWFuQixNQUFNLENBQUNnQixHQUFHO3dCQUM1QmdCLE9BQU9qQixhQUFhSSxhQUFhbkIsTUFBTSxDQUFDZ0IsR0FBRzt3QkFDM0NpQixVQUFVZCxhQUFhbkIsTUFBTSxDQUFDaUMsUUFBUTtvQkFDeEMsR0FDQ0MsSUFBSSxDQUFDLENBQUNDLFdBQWE7d0JBQ2xCN0IsUUFBUUMsR0FBRyxDQUFDNEI7b0JBQ2QsR0FDQ0MsS0FBSyxDQUFDLENBQUNDLE1BQVE7d0JBQ2QvQixRQUFRQyxHQUFHLENBQUM4QjtvQkFDZDtvQkFFRmYsZUFBZSxLQUFLO29CQUNwQkgsYUFBYVIsU0FBUztnQkFDeEI7MEJBRUEsNEVBQUMyQjs7c0NBQ0MsOERBQUNmOzRCQUNDZ0IsTUFBSzs0QkFDTGYsV0FBVTs0QkFDVkMsU0FBUyxJQUFNSCxlQUFlLEtBQUs7c0NBQ3BDOzs7Ozs7c0NBR0QsOERBQUNrQjs0QkFDQ0MsYUFBWTs0QkFDWi9CLE1BQUs7NEJBQ0xELE9BQU9VLGFBQWFuQixNQUFNLENBQUNvQixNQUFNOzRCQUNqQ3NCLFVBQVV2QixhQUFhZixZQUFZOzs7Ozs7c0NBRXJDLDhEQUFDb0M7NEJBQ0NDLGFBQVk7NEJBQ1ovQixNQUFLOzRCQUNMRCxPQUFPVSxhQUFhbkIsTUFBTSxDQUFDZ0IsR0FBRzs0QkFDOUIwQixVQUFVdkIsYUFBYWYsWUFBWTs7Ozs7O3NDQUVyQyw4REFBQ29DOzRCQUNDQyxhQUFZOzRCQUNaL0IsTUFBSzs0QkFDTEQsT0FBT1UsYUFBYW5CLE1BQU0sQ0FBQ2lDLFFBQVE7NEJBQ25DUyxVQUFVdkIsYUFBYWYsWUFBWTs7Ozs7O3NDQUVyQyw4REFBQ21COzRCQUFPZ0IsTUFBSztzQ0FBUzs7Ozs7Ozs7Ozs7Ozs7Ozt1QkFJMUIsS0FBSzs7Ozs7OztBQUliLENBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvY29tcG9uZW50cy9SZWdpc3RlclZpZGVvL2luZGV4LmpzPzM0NWUiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gXCJyZWFjdFwiO1xyXG5pbXBvcnQgeyBTdHlsZWRSZWdpc3RlclZpZGVvIH0gZnJvbSBcIi4vc3R5bGVzXCI7XHJcbmltcG9ydCB7IGNyZWF0ZUNsaWVudCB9IGZyb20gXCJAc3VwYWJhc2Uvc3VwYWJhc2UtanNcIjtcclxuXHJcbi8vIFdoaXRlYm9hcmRpbmdcclxuLy8gQ3VzdG9tIEhvb2tcclxuZnVuY3Rpb24gdXNlRm9ybShwcm9wc0RvRm9ybSkge1xyXG4gIGNvbnN0IFt2YWx1ZXMsIHNldFZhbHVlc10gPSBSZWFjdC51c2VTdGF0ZShwcm9wc0RvRm9ybS5pbml0aWFsVmFsdWVzKTtcclxuXHJcbiAgcmV0dXJuIHtcclxuICAgIHZhbHVlcyxcclxuICAgIGhhbmRsZUNoYW5nZTogKGV2ZW50bykgPT4ge1xyXG4gICAgICBjb25zb2xlLmxvZyhldmVudG8udGFyZ2V0KTtcclxuICAgICAgY29uc3QgdmFsdWUgPSBldmVudG8udGFyZ2V0LnZhbHVlO1xyXG4gICAgICBjb25zdCBuYW1lID0gZXZlbnRvLnRhcmdldC5uYW1lO1xyXG4gICAgICBzZXRWYWx1ZXMoe1xyXG4gICAgICAgIC4uLnZhbHVlcyxcclxuICAgICAgICBbbmFtZV06IHZhbHVlLFxyXG4gICAgICB9KTtcclxuICAgIH0sXHJcbiAgICBjbGVhckZvcm0oKSB7XHJcbiAgICAgIHNldFZhbHVlcyh7fSk7XHJcbiAgICB9LFxyXG4gIH07XHJcbn1cclxuXHJcbmNvbnN0IFBST0pFQ1RfVVJMID0gXCJodHRwczovL255eXBvcGRuZ2VmYmxqc21xbG93LnN1cGFiYXNlLmNvXCI7XHJcbmNvbnN0IFBVQkxJQ19LRVkgPVxyXG4gIFwiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnBjM01pT2lKemRYQmhZbUZ6WlNJc0luSmxaaUk2SW01NWVYQnZjR1J1WjJWbVlteHFjMjF4Ykc5M0lpd2ljbTlzWlNJNkltRnViMjRpTENKcFlYUWlPakUyTmpneU1EVTNOalFzSW1WNGNDSTZNVGs0TXpjNE1UYzJOSDAuR21tS1pfLWd6eGR1SEFZQjY5OXZGa3BHN0xjX252NzhwSkNCdTFVZnpOb1wiO1xyXG5jb25zdCBzdXBhYmFzZSA9IGNyZWF0ZUNsaWVudChQUk9KRUNUX1VSTCwgUFVCTElDX0tFWSk7XHJcblxyXG5mdW5jdGlvbiBnZXRUaHVtYm5haWwodXJsKSB7XHJcbiAgcmV0dXJuIGBodHRwczovL2ltZy55b3V0dWJlLmNvbS92aS8ke3VybC5zcGxpdChcInY9XCIpWzFdfS9ocWRlZmF1bHQuanBnYDtcclxufVxyXG5cclxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gUmVnaXN0ZXJWaWRlbygpIHtcclxuICBjb25zdCBmb3JtQ2FkYXN0cm8gPSB1c2VGb3JtKHtcclxuICAgIGluaXRpYWxWYWx1ZXM6IHtcclxuICAgICAgdGl0dWxvOiBcIlwiLFxyXG4gICAgICB1cmw6IFwiXCIsXHJcbiAgICB9LFxyXG4gIH0pO1xyXG4gIGNvbnN0IFtmb3JtVmlzaXZlbCwgc2V0Rm9ybVZpc2l2ZWxdID0gUmVhY3QudXNlU3RhdGUoZmFsc2UpO1xyXG5cclxuICByZXR1cm4gKFxyXG4gICAgPFN0eWxlZFJlZ2lzdGVyVmlkZW8+XHJcbiAgICAgIDxidXR0b24gY2xhc3NOYW1lPVwiYWRkLXZpZGVvXCIgb25DbGljaz17KCkgPT4gc2V0Rm9ybVZpc2l2ZWwodHJ1ZSl9PlxyXG4gICAgICAgICtcclxuICAgICAgPC9idXR0b24+XHJcbiAgICAgIHsvKiBUZXJuw6FyaW8gKi99XHJcbiAgICAgIHsvKiBPcGVyYWRvcmVzIGRlIEN1cnRvLWNpcmN1aXRvICovfVxyXG4gICAgICB7Zm9ybVZpc2l2ZWwgPyAoXHJcbiAgICAgICAgPGZvcm1cclxuICAgICAgICAgIG9uU3VibWl0PXsoZXZlbnRvKSA9PiB7XHJcbiAgICAgICAgICAgIGV2ZW50by5wcmV2ZW50RGVmYXVsdCgpO1xyXG4gICAgICAgICAgICBjb25zb2xlLmxvZyhmb3JtQ2FkYXN0cm8udmFsdWVzKTtcclxuXHJcbiAgICAgICAgICAgIC8vIENvbnRyYXRvIGVudHJlIG8gbm9zc28gRnJvbnQgZSBvIEJhY2tFbmRcclxuICAgICAgICAgICAgc3VwYWJhc2VcclxuICAgICAgICAgICAgICAuZnJvbShcInZpZGVvXCIpXHJcbiAgICAgICAgICAgICAgLmluc2VydCh7XHJcbiAgICAgICAgICAgICAgICB0aXRsZTogZm9ybUNhZGFzdHJvLnZhbHVlcy50aXR1bG8sXHJcbiAgICAgICAgICAgICAgICB1cmw6IGZvcm1DYWRhc3Ryby52YWx1ZXMudXJsLFxyXG4gICAgICAgICAgICAgICAgdGh1bWI6IGdldFRodW1ibmFpbChmb3JtQ2FkYXN0cm8udmFsdWVzLnVybCksXHJcbiAgICAgICAgICAgICAgICBwbGF5bGlzdDogZm9ybUNhZGFzdHJvLnZhbHVlcy5wbGF5bGlzdCxcclxuICAgICAgICAgICAgICB9KVxyXG4gICAgICAgICAgICAgIC50aGVuKChvcXVldmVpbykgPT4ge1xyXG4gICAgICAgICAgICAgICAgY29uc29sZS5sb2cob3F1ZXZlaW8pO1xyXG4gICAgICAgICAgICAgIH0pXHJcbiAgICAgICAgICAgICAgLmNhdGNoKChlcnIpID0+IHtcclxuICAgICAgICAgICAgICAgIGNvbnNvbGUubG9nKGVycik7XHJcbiAgICAgICAgICAgICAgfSk7XHJcblxyXG4gICAgICAgICAgICBzZXRGb3JtVmlzaXZlbChmYWxzZSk7XHJcbiAgICAgICAgICAgIGZvcm1DYWRhc3Ryby5jbGVhckZvcm0oKTtcclxuICAgICAgICAgIH19XHJcbiAgICAgICAgPlxyXG4gICAgICAgICAgPGRpdj5cclxuICAgICAgICAgICAgPGJ1dHRvblxyXG4gICAgICAgICAgICAgIHR5cGU9XCJidXR0b25cIlxyXG4gICAgICAgICAgICAgIGNsYXNzTmFtZT1cImNsb3NlLW1vZGFsXCJcclxuICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRGb3JtVmlzaXZlbChmYWxzZSl9XHJcbiAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICBYXHJcbiAgICAgICAgICAgIDwvYnV0dG9uPlxyXG4gICAgICAgICAgICA8aW5wdXRcclxuICAgICAgICAgICAgICBwbGFjZWhvbGRlcj1cIlRpdHVsbyBkbyB2w61kZW9cIlxyXG4gICAgICAgICAgICAgIG5hbWU9XCJ0aXR1bG9cIlxyXG4gICAgICAgICAgICAgIHZhbHVlPXtmb3JtQ2FkYXN0cm8udmFsdWVzLnRpdHVsb31cclxuICAgICAgICAgICAgICBvbkNoYW5nZT17Zm9ybUNhZGFzdHJvLmhhbmRsZUNoYW5nZX1cclxuICAgICAgICAgICAgLz5cclxuICAgICAgICAgICAgPGlucHV0XHJcbiAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9XCJVUkxcIlxyXG4gICAgICAgICAgICAgIG5hbWU9XCJ1cmxcIlxyXG4gICAgICAgICAgICAgIHZhbHVlPXtmb3JtQ2FkYXN0cm8udmFsdWVzLnVybH1cclxuICAgICAgICAgICAgICBvbkNoYW5nZT17Zm9ybUNhZGFzdHJvLmhhbmRsZUNoYW5nZX1cclxuICAgICAgICAgICAgLz5cclxuICAgICAgICAgICAgPGlucHV0XHJcbiAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9XCJOb21lIGRhIHBsYXlsaXN0XCJcclxuICAgICAgICAgICAgICBuYW1lPVwicGxheWxpc3RcIlxyXG4gICAgICAgICAgICAgIHZhbHVlPXtmb3JtQ2FkYXN0cm8udmFsdWVzLnBsYXlsaXN0fVxyXG4gICAgICAgICAgICAgIG9uQ2hhbmdlPXtmb3JtQ2FkYXN0cm8uaGFuZGxlQ2hhbmdlfVxyXG4gICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICA8YnV0dG9uIHR5cGU9XCJzdWJtaXRcIj5DYWRhc3RyYXI8L2J1dHRvbj5cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDwvZm9ybT5cclxuICAgICAgKSA6IChcclxuICAgICAgICBmYWxzZVxyXG4gICAgICApfVxyXG4gICAgPC9TdHlsZWRSZWdpc3RlclZpZGVvPlxyXG4gICk7XHJcbn1cclxuIl0sIm5hbWVzIjpbIlJlYWN0IiwiU3R5bGVkUmVnaXN0ZXJWaWRlbyIsImNyZWF0ZUNsaWVudCIsInVzZUZvcm0iLCJwcm9wc0RvRm9ybSIsInZhbHVlcyIsInNldFZhbHVlcyIsInVzZVN0YXRlIiwiaW5pdGlhbFZhbHVlcyIsImhhbmRsZUNoYW5nZSIsImV2ZW50byIsImNvbnNvbGUiLCJsb2ciLCJ0YXJnZXQiLCJ2YWx1ZSIsIm5hbWUiLCJjbGVhckZvcm0iLCJQUk9KRUNUX1VSTCIsIlBVQkxJQ19LRVkiLCJzdXBhYmFzZSIsImdldFRodW1ibmFpbCIsInVybCIsInNwbGl0IiwiUmVnaXN0ZXJWaWRlbyIsImZvcm1DYWRhc3RybyIsInRpdHVsbyIsImZvcm1WaXNpdmVsIiwic2V0Rm9ybVZpc2l2ZWwiLCJidXR0b24iLCJjbGFzc05hbWUiLCJvbkNsaWNrIiwiZm9ybSIsIm9uU3VibWl0IiwicHJldmVudERlZmF1bHQiLCJmcm9tIiwiaW5zZXJ0IiwidGl0bGUiLCJ0aHVtYiIsInBsYXlsaXN0IiwidGhlbiIsIm9xdWV2ZWlvIiwiY2F0Y2giLCJlcnIiLCJkaXYiLCJ0eXBlIiwiaW5wdXQiLCJwbGFjZWhvbGRlciIsIm9uQ2hhbmdlIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/components/RegisterVideo/index.js\n");
+
+/***/ }),
+
+/***/ "./src/components/RegisterVideo/styles.js":
+/*!************************************************!*\
+  !*** ./src/components/RegisterVideo/styles.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"StyledRegisterVideo\": () => (/* binding */ StyledRegisterVideo)\n/* harmony export */ });\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ \"styled-components\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);\n\nconst StyledRegisterVideo = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({\n    displayName: \"styles__StyledRegisterVideo\",\n    componentId: \"sc-867cd9f3-0\"\n})`\r\n  .add-video {\r\n    width: 50px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    color: inherit;\r\n    position: fixed;\r\n    bottom: 16px;\r\n    right: 16px;\r\n    border: 0;\r\n    background-color: red;\r\n    border-radius: 50%;\r\n    z-index: 99;\r\n    cursor: pointer;\r\n  }\r\n  .close-modal {\r\n    width: 25px;\r\n    height: 25px;\r\n    position: absolute;\r\n    top: 8px;\r\n    right: 16px;\r\n    color: inherit;\r\n    background-color: transparent;\r\n    border: none;\r\n    cursor: pointer;\r\n  }\r\n  button[type=\"submit\"] {\r\n    background-color: red;\r\n    padding: 8px 16px;\r\n    border: none;\r\n    border-radius: 2px;\r\n    cursor: pointer;\r\n    color: inherit;\r\n  }\r\n  form {\r\n    width: 100%;\r\n    padding: 5%;\r\n    background-color: rgba(0, 0, 0, 0.5);\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    z-index: 100;\r\n    display: flex;\r\n    justify-content: center;\r\n    & > div {\r\n      flex: 1;\r\n      border-radius: 8px;\r\n      max-width: 320px;\r\n      background-color: ${({ theme  })=>theme.backgroundLevel2};\r\n      display: flex;\r\n      flex-direction: column;\r\n      position: relative;\r\n      padding: 16px;\r\n      padding-top: 40px;\r\n    }\r\n  }\r\n  input {\r\n    border-radius: 2px;\r\n    border: 1px solid ${({ theme  })=>theme.borderBase};\r\n    padding: 8px 10px;\r\n    margin-bottom: 10px;\r\n    outline: none;\r\n    color: #222222;\r\n    background-color: #f9f9f9;\r\n    color: ${({ theme  })=>theme.textColorBase};\r\n    background-color: ${({ theme  })=>theme.backgroundBase};\r\n  }\r\n`;\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29tcG9uZW50cy9SZWdpc3RlclZpZGVvL3N0eWxlcy5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBdUM7QUFFaEMsTUFBTUMsc0JBQXNCRCx1RUFBVTs7O0VBQUEsQ0FBQyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9jb21wb25lbnRzL1JlZ2lzdGVyVmlkZW8vc3R5bGVzLmpzPzIyYTMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlZCBmcm9tIFwic3R5bGVkLWNvbXBvbmVudHNcIjtcclxuXHJcbmV4cG9ydCBjb25zdCBTdHlsZWRSZWdpc3RlclZpZGVvID0gc3R5bGVkLmRpdmBcclxuICAuYWRkLXZpZGVvIHtcclxuICAgIHdpZHRoOiA1MHB4O1xyXG4gICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgY29sb3I6IGluaGVyaXQ7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICBib3R0b206IDE2cHg7XHJcbiAgICByaWdodDogMTZweDtcclxuICAgIGJvcmRlcjogMDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJlZDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIHotaW5kZXg6IDk5O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIH1cclxuICAuY2xvc2UtbW9kYWwge1xyXG4gICAgd2lkdGg6IDI1cHg7XHJcbiAgICBoZWlnaHQ6IDI1cHg7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDhweDtcclxuICAgIHJpZ2h0OiAxNnB4O1xyXG4gICAgY29sb3I6IGluaGVyaXQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcbiAgYnV0dG9uW3R5cGU9XCJzdWJtaXRcIl0ge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xyXG4gICAgcGFkZGluZzogOHB4IDE2cHg7XHJcbiAgICBib3JkZXI6IG5vbmU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAycHg7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBjb2xvcjogaW5oZXJpdDtcclxuICB9XHJcbiAgZm9ybSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHBhZGRpbmc6IDUlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjUpO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgdG9wOiAwO1xyXG4gICAgYm90dG9tOiAwO1xyXG4gICAgbGVmdDogMDtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgei1pbmRleDogMTAwO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgJiA+IGRpdiB7XHJcbiAgICAgIGZsZXg6IDE7XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDhweDtcclxuICAgICAgbWF4LXdpZHRoOiAzMjBweDtcclxuICAgICAgYmFja2dyb3VuZC1jb2xvcjogJHsoeyB0aGVtZSB9KSA9PiB0aGVtZS5iYWNrZ3JvdW5kTGV2ZWwyfTtcclxuICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICBwYWRkaW5nOiAxNnB4O1xyXG4gICAgICBwYWRkaW5nLXRvcDogNDBweDtcclxuICAgIH1cclxuICB9XHJcbiAgaW5wdXQge1xyXG4gICAgYm9yZGVyLXJhZGl1czogMnB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgJHsoeyB0aGVtZSB9KSA9PiB0aGVtZS5ib3JkZXJCYXNlfTtcclxuICAgIHBhZGRpbmc6IDhweCAxMHB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBjb2xvcjogIzIyMjIyMjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmOWY5Zjk7XHJcbiAgICBjb2xvcjogJHsoeyB0aGVtZSB9KSA9PiB0aGVtZS50ZXh0Q29sb3JCYXNlfTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICR7KHsgdGhlbWUgfSkgPT4gdGhlbWUuYmFja2dyb3VuZEJhc2V9O1xyXG4gIH1cclxuYDtcclxuIl0sIm5hbWVzIjpbInN0eWxlZCIsIlN0eWxlZFJlZ2lzdGVyVmlkZW8iLCJkaXYiLCJ0aGVtZSIsImJhY2tncm91bmRMZXZlbDIiLCJib3JkZXJCYXNlIiwidGV4dENvbG9yQmFzZSIsImJhY2tncm91bmRCYXNlIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/components/RegisterVideo/styles.js\n");
+
+/***/ }),
+
+/***/ "@supabase/supabase-js":
+/*!****************************************!*\
+  !*** external "@supabase/supabase-js" ***!
+  \****************************************/
 /***/ ((module) => {
 
 module.exports = require("@supabase/supabase-js");
 
 /***/ }),
 
-/***/ 689:
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
 /***/ ((module) => {
 
 module.exports = require("react");
 
 /***/ }),
 
-/***/ 997:
+/***/ "react/jsx-dev-runtime":
+/*!****************************************!*\
+  !*** external "react/jsx-dev-runtime" ***!
+  \****************************************/
 /***/ ((module) => {
 
-module.exports = require("react/jsx-runtime");
+module.exports = require("react/jsx-dev-runtime");
 
 /***/ }),
 
-/***/ 518:
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
 /***/ ((module) => {
 
 module.exports = require("styled-components");
@@ -375,7 +110,7 @@ module.exports = require("styled-components");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(301));
+var __webpack_exports__ = (__webpack_exec__("./pages/_app.js"));
 module.exports = __webpack_exports__;
 
 })();
